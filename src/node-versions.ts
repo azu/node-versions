@@ -15,7 +15,7 @@ import {
  * Object returned by getCurrentNodeVersions.
  */
 export interface NodeVersionsResult {
-  lts: NodeReleaseDescriptor;
+  lts: Array<NodeReleaseDescriptor>;
   latest: NodeReleaseDescriptor;
 }
 
@@ -26,9 +26,9 @@ export default async function getCurrentNodeVersions(): Promise<NodeVersionsResu
 
     const releasesSorted = releases.sort((a, b) => releaseComparator(a.version, b.version)).reverse();
 
-    const ltsRelease = releasesSorted.find(release => release.lts !== false);
+    const ltsReleases = releasesSorted.filter(release => release.lts !== false);
 
-    if (!ltsRelease) {
+    if (ltsReleases.length === 0) {
       throw new Error('Could not determine LTS release.');
     }
 
@@ -39,7 +39,7 @@ export default async function getCurrentNodeVersions(): Promise<NodeVersionsResu
     }
 
     return {
-      lts: parseRelease(ltsRelease),
+      lts: ltsReleases.map(release => parseRelease(release)),
       latest: parseRelease(latestRelease)
     };
   } catch (err) {

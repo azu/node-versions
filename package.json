@@ -1,5 +1,5 @@
 {
-  "name": "@darkobits/node-versions",
+  "name": "@azu/node-versions",
   "version": "1.0.6",
   "description": "Get the 'latest' and 'LTS' versions of Node JS.",
   "license": "WTFPL",
@@ -24,15 +24,11 @@
   "files": [
     "dist"
   ],
-  "bin": {
-    "node-versions": "dist/bin/cli.js"
-  },
   "main": "dist/node-versions.js",
   "scripts": {
     "prepare": "nps prepare"
   },
   "dependencies": {
-    "@darkobits/saffron": "^0.1.17",
     "axios": "^0.21.1",
     "semver": "^7.3.5"
   },

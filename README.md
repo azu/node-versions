@@ -1,13 +1,9 @@
-<a href="#top" id="top">
-  <img src="https://user-images.githubusercontent.com/441546/102315714-7ab7b180-3f29-11eb-9329-775c09c79361.png" style="max-width: 100%;">
-</a>
-<p align="center">
-  <a href="https://www.npmjs.com/package/@darkobits/node-versions"><img src="https://img.shields.io/npm/v/@darkobits/node-versions.svg?style=flat-square"></a>
-  <a href="https://github.com/darkobits/node-versions/actions?query=workflow%3ACI"><img src="https://img.shields.io/github/workflow/status/darkobits/node-versions/CI/master?style=flat-square"></a>
-  <a href="https://app.codecov.io/gh/darkobits/node-versions/branch/master"><img src="https://img.shields.io/codecov/c/github/darkobits/node-versions/master?style=flat-square"></a>
-  <a href="https://depfu.com/github/darkobits/node-versions"><img src="https://img.shields.io/depfu/darkobits/node-versions?style=flat-square"></a>
-  <a href="https://conventionalcommits.org"><img src="https://img.shields.io/static/v1?label=commits&message=conventional&style=flat-square&color=398AFB"></a>
-</p>
+Fork of [@darkobits/node-versions](https://github.com/darkobits/node-versions)
+
+## Diff
+
+- `lts` return multiple LTS versions
+- Remove CLI
 
 ## Install
 
@@ -15,13 +11,13 @@ This package is available as a CLI and as a Node API. If only using the Node
 API, you should install it locally in your project:
 
 ```
-npm i @darkobits/node-versions
+npm i @azu/node-versions
 ```
 
 If using the CLI, it may be preferable to install it globally:
 
 ```
-npm i -g @darkobits/node-versions
+npm i -g @azu/node-versions
 ```
 
 ## Use
@@ -92,19 +88,3 @@ interface NodeReleaseDescriptor {
   openssl: VersionDescriptor;
 }
 ```
-
-### CLI
-
-```
-> node-versions
-Latest: 11.14.0
-LTS:    10.15.3
-```
-
-You may also use `-o json` or `--output json` to have `node-versions` output
-JSON.
-
-<br />
-<a href="#top">
-  <img src="https://user-images.githubusercontent.com/441546/102322726-5e6d4200-3f34-11eb-89f2-c31624ab7488.png" style="max-width: 100%;">
-</a>

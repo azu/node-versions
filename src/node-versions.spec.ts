@@ -46,7 +46,7 @@ describe('nodeVersions', () => {
       const results = await nodeVersions();
 
       expect(results.latest.version.full).toBe('4.5.6');
-      expect(results.lts.version.full).toBe('1.2.3');
+      expect(results.lts.map(v => v.version.full)).toEqual(['1.2.3']);
     });
 
     describe('when receiving a malformed response', () => {

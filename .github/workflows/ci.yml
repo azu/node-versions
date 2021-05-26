@@ -21,6 +21,4 @@ jobs:
       - name: Build Project
         run: npx nps build
       - name: Run Tests
-        run: npx nps test.coverage
-      - name: Upload Coverage Report
-        run: bash <(curl -s https://codecov.io/bash)
+        run: npx nps test
